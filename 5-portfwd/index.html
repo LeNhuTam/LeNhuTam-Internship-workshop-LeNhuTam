@@ -12,21 +12,21 @@
     <title>Set Auto Adjust for Provisioned Concurrency :: AWS System Manager</title>
 
     
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/nucleus.css?1754384048" rel="stylesheet">
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/fontawesome-all.min.css?1754384048" rel="stylesheet">
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/hybrid.css?1754384048" rel="stylesheet">
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/featherlight.min.css?1754384048" rel="stylesheet">
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/perfect-scrollbar.min.css?1754384048" rel="stylesheet">
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/auto-complete.css?1754384048" rel="stylesheet">
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/atom-one-dark-reasonable.css?1754384048" rel="stylesheet">
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/theme.css?1754384048" rel="stylesheet">
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/hugo-theme.css?1754384048" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/nucleus.css?1754384825" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/fontawesome-all.min.css?1754384825" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/hybrid.css?1754384825" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/featherlight.min.css?1754384825" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/perfect-scrollbar.min.css?1754384825" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/auto-complete.css?1754384825" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/atom-one-dark-reasonable.css?1754384825" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/theme.css?1754384825" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/hugo-theme.css?1754384825" rel="stylesheet">
     
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/theme-workshop.css?1754384048" rel="stylesheet">
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/css/theme-workshop.css?1754384825" rel="stylesheet">
     
     
 
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/jquery-3.3.1.min.js?1754384048"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/jquery-3.3.1.min.js?1754384825"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -58,14 +58,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/LeNhuTam-Internship-workshop-LeNhuTam/js/lunr.min.js?1754384048"></script>
-<script type="text/javascript" src="/LeNhuTam-Internship-workshop-LeNhuTam/js/auto-complete.js?1754384048"></script>
+<script type="text/javascript" src="/LeNhuTam-Internship-workshop-LeNhuTam/js/lunr.min.js?1754384825"></script>
+<script type="text/javascript" src="/LeNhuTam-Internship-workshop-LeNhuTam/js/auto-complete.js?1754384825"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/lenhutam.github.io\/LeNhuTam-Internship-workshop-LeNhuTam\/";
     
 </script>
-<script type="text/javascript" src="/LeNhuTam-Internship-workshop-LeNhuTam/js/search.js?1754384048"></script>
+<script type="text/javascript" src="/LeNhuTam-Internship-workshop-LeNhuTam/js/search.js?1754384825"></script>
 
     
   </div>
@@ -406,17 +406,17 @@
 
 	<p>Open cmd.
 Run configure command.</p>
-<p><img src="/images/5.fwd/51-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/51-auto.png" alt="Connect"></p>
 <p>After running configure we run
 aws application-autoscaling register-scalable-target &ndash;service-namespace lambda &ndash;resource-id function:lambda-performance-test:prod &ndash;scalable-dimension lambda:function:ProvisionedConcurrency &ndash;min-capacity 1 &ndash;max-capacity 5</p>
-<p><img src="/images/5.fwd/52-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/52-auto.png" alt="Connect"></p>
 <p>So you&rsquo;ve just registered a Scalable Goal for Provisioned Concurrency
 Enable Provisioned Concurrency.</p>
-<p><img src="/images/5.fwd/53-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/53-auto.png" alt="Connect"></p>
 <p>Test results:</p>
-<p><img src="/images/5.fwd/54-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/54-auto.png" alt="Connect"></p>
 <p><strong>Configuration as shown in picture</strong>.</p>
-<p><img src="/images/5.fwd/55-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/55-auto.png" alt="Connect"></p>
 <p>Similarly, 512 and 1024 are replaced with Memory.
 Run the test 5 times for the following results:</p>
 <p><strong>Remarks:</strong>.
@@ -426,14 +426,14 @@ Increasing Memory from 128 → 512 → 1024 does not make a significant differen
 Least memory = cheapest price.
 Running time is almost the same.</p>
 <p><strong>Create monitoring dashboard</strong>.</p>
-<p><img src="/images/5.fwd/56-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/56-auto.png" alt="Connect"></p>
 <p><strong>Monitoring Dashboard</strong>.</p>
-<p><img src="/images/5.fwd/57-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/57-auto.png" alt="Connect"></p>
 <p><strong>Successfully created Extension Policy to automatically adjust Provisioned Concurrency</strong>.</p>
-<p><img src="/images/5.fwd/58-auto.png" alt="Connect"></p>
-<p><img src="/images/5.fwd/59-auto.png" alt="Connect"></p>
-<p><img src="/images/5.fwd/590-auto.png" alt="Connect"></p>
-<p><img src="/images/5.fwd/591-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/58-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/59-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/590-auto.png" alt="Connect"></p>
+<p><img src="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam//images/5.fwd/591-auto.png" alt="Connect"></p>
 
 
 
@@ -594,19 +594,19 @@ Running time is almost the same.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/clipboard.min.js?1754384048"></script>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/perfect-scrollbar.min.js?1754384048"></script>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/perfect-scrollbar.jquery.min.js?1754384048"></script>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/jquery.sticky.js?1754384048"></script>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/featherlight.min.js?1754384048"></script>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/highlight.pack.js?1754384048"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/clipboard.min.js?1754384825"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/perfect-scrollbar.min.js?1754384825"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/perfect-scrollbar.jquery.min.js?1754384825"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/jquery.sticky.js?1754384825"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/featherlight.min.js?1754384825"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/highlight.pack.js?1754384825"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/modernizr.custom-3.6.0.js?1754384048"></script>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/learn.js?1754384048"></script>
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/hugo-learn.js?1754384048"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/modernizr.custom-3.6.0.js?1754384825"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/learn.js?1754384825"></script>
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/js/hugo-learn.js?1754384825"></script>
 
-    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/mermaid/mermaid.css?1754384048" rel="stylesheet" />
-    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/mermaid/mermaid.js?1754384048"></script>
+    <link href="/LeNhuTam-Internship-workshop-LeNhuTam/mermaid/mermaid.css?1754384825" rel="stylesheet" />
+    <script src="/LeNhuTam-Internship-workshop-LeNhuTam/mermaid/mermaid.js?1754384825"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
