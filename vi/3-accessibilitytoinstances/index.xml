@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tạo và cấu hình hàm Lambda on AWS System Manager</title>
-    <link>https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/3-accessibilitytoinstances/</link>
+    <link>https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam/vi/3-accessibilitytoinstances/</link>
     <description>Recent content in Tạo và cấu hình hàm Lambda on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/3-accessibilitytoinstances/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lenhutam.github.io/LeNhuTam-Internship-workshop-LeNhuTam/vi/3-accessibilitytoinstances/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
