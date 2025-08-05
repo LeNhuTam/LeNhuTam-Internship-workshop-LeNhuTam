@@ -1,0 +1,64 @@
+[
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/",
+	"title": "Optimizing Lambda Performance",
+	"tags": [],
+	"description": "",
+	"content": "Advanced Lambda Performance Optimization with Provisioned Concurrency Overall In this lab, you\u0026rsquo;ll learn the basics and practice of Advanced Lambda Performance Optimization with Provisioned Concurrency. Perform creating public and private instance connections.\nContent Introduction Preparation Create and configure Lambda function Configure API Gateway Set Auto Scaling for Provisioned Concurrency Clean up resources "
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "AWS Lambda is a serverless computing service provided by Amazon Web Services that allows you to run code without managing servers. You just need to write code and deploy, while AWS automatically handles infrastructure, scaling, and maintenance.\nKey features:\nNo need to manage servers: No need to configure, operate, or update operating systems. Automatic scaling: Lambda automatically scales according to the number of actual requests. Pay as you go: You only pay for execution time and function calls, no charge when not in use. Supports many languages: Node.js, Python, Java, Go, .NET, Ruby, and more. Deep integration with AWS services: Can be triggered from S3, API Gateway, DynamoDB, CloudWatch, EventBridge, and more. Popular applications:\nProcess images, videos, files immediately upon upload to S3. Automatically respond to API or webhook events. Automatically backup and synchronize data. Build microservices or simple backends. "
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/2-prerequiste/",
+	"title": "Preparation ",
+	"tags": [],
+	"description": "",
+	"content": "\rYou need to create an activated AWS account to perform this lab.\nAWS account activated. Install AWS CLI. https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html Or run command in cmd: msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi Download the installer .msi file for Windows. Run the installation. After installation, close cmd, reopen cmd. Check if AWS CLI has been successfully installed by entering cmd: aws –version Created IAM role with permissions for Lambda, API Gateway, CloudWatch. "
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/3-accessibilitytoinstances/",
+	"title": "Create and configure Lambda function",
+	"tags": [],
+	"description": "",
+	"content": "Create and configure Lambda function.\nSearch Lambda.\nClick Create a function.\nFunction name : lambda-performance-test. Run time : Node.js 22.x.\nClick Create function.\nCreate success.\nEnter code as shown.\n"
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/4-s3log/",
+	"title": "Configure API Gateway",
+	"tags": [],
+	"description": "",
+	"content": "Configure API Gateway.\nCreate REST API connect Lambda. Create HTTP API Gateway to call Lambda via URL. Link API Gateway with function lambda-performance-test Deploy stage prod. Deploy API and get Invoke URL Get endpoint URL:https://661l0vt812.execute-api.ap-southeast-1.amazonaws.com/default/lambda-performance-test. Test curl to confirm Lambda works:Open cmd and copy this endpoint URL into: curl “https://661l0vt812.execute-api.ap-southeast-1.amazonaws.com/default/lambda-performance-test”. Result: "
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/5-portfwd/",
+	"title": "Set Auto Adjust for Provisioned Concurrency",
+	"tags": [],
+	"description": "",
+	"content": "Open cmd. Run configure command.\nAfter running configure we run aws application-autoscaling register-scalable-target \u0026ndash;service-namespace lambda \u0026ndash;resource-id function:lambda-performance-test:prod \u0026ndash;scalable-dimension lambda:function:ProvisionedConcurrency \u0026ndash;min-capacity 1 \u0026ndash;max-capacity 5\nSo you\u0026rsquo;ve just registered a Scalable Goal for Provisioned Concurrency Enable Provisioned Concurrency.\nTest results:\nConfiguration as shown in picture.\nSimilarly, 512 and 1024 are replaced with Memory. Run the test 5 times for the following results:\nRemarks:. Your lambda function is very lightweight (returns almost only JSON). Increasing Memory from 128 → 512 → 1024 does not make a significant difference in running time. 128MB is cost-effective, because: Least memory = cheapest price. Running time is almost the same.\nCreate monitoring dashboard.\nMonitoring Dashboard.\nSuccessfully created Extension Policy to automatically adjust Provisioned Concurrency.\n"
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/6-cleanup/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": " Delete Lambda Function \u0026amp; Alias. • Go to AWS Lambda =\u0026gt; Functions =\u0026gt; Select function lambda-performance-test. • Delete alias prod first, then delete the function. Delete API Gateway. Run this command in cmd: aws apigateway get -rest-api. Wish everyone a successful practice.\n"
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

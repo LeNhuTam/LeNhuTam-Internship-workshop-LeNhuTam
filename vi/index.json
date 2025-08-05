@@ -1,0 +1,64 @@
+[
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "AWS Lambda là một dịch vụ điện toán không máy chủ (serverless) do Amazon Web Services cung cấp, cho phép bạn chạy mã mà không cần quản lý máy chủ. Bạn chỉ cần viết mã và triển khai, còn việc xử lý hạ tầng, mở rộng, bảo trì đều do AWS tự động đảm nhiệm.\nĐặc điểm chính:\nKhông cần quản lý server: Không cần cấu hình, vận hành hay cập nhật hệ điều hành. Tự động mở rộng: Lambda tự động scale theo số lượng yêu cầu thực tế. Trả phí theo mức sử dụng: Bạn chỉ trả tiền cho thời gian thực thi và số lần gọi hàm, không tốn phí khi không dùng. Hỗ trợ nhiều ngôn ngữ: Node.js, Python, Java, Go, .NET, Ruby và hơn thế nữa. Tích hợp sâu với các dịch vụ AWS: Có thể kích hoạt từ S3, API Gateway, DynamoDB, CloudWatch, EventBridge, v.v. Ứng dụng phổ biến:\nXử lý ảnh, video, file ngay khi tải lên S3. Tự động phản hồi các sự kiện API hoặc webhook. Tự động backup, đồng bộ dữ liệu. Xây dựng microservices hoặc backend đơn giản. "
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/",
+	"title": "Optimizing Lambda Performance",
+	"tags": [],
+	"description": "",
+	"content": "Tối ưu hóa hiệu suất Lambda nâng cao với tính năng đồng thời được cung cấp Tổng quan Trong phòng thí nghiệm này, bạn sẽ tìm hiểu những kiến thức cơ bản và thực hành về Tối ưu hóa Hiệu suất Lambda Nâng cao với Tính năng Đồng thời Được Cung cấp. Thực hiện việc tạo kết nối phiên bản công khai và riêng tư.\nNội dung Giới thiệu Chuẩn bị Tạo và cấu hình hàm Lambda Cấu hình API Gateway Thiết lập Auto Scaling cho Provisioned Concurrency Dọn dẹp tài nguyên "
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "\rBạn cần tạo sẵn 1 Linux instance thuộc public subnet và 1 Window instance thuộc private subnet để thực hiện bài thực hành này.\nĐể tìm hiểu cách tạo các EC2 instance và VPC với public/private subnet các bạn có thể tham khảo bài lab :\nGiới thiệu về Amazon EC2 Làm việc với Amazon VPC Để sử dụng System Manager để quản lý window instance nói riêng và các instance nói chung của chúng ta trên AWS, ta cần phải cung cấp quyền cho các instance của chúng ta có thể làm việc với System Manager.Trong phần chuẩn bị này, chúng ta cũng sẽ tiến hành tạo IAM Role để cấp quyền cho các instance có thể làm việc với System Manager.\nNội dung Chuẩn bị VPC và EC2 Instance Tạo IAM Role "
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/3-accessibilitytoinstances/",
+	"title": "Tạo và cấu hình hàm Lambda",
+	"tags": [],
+	"description": "",
+	"content": "Tạo và cấu hình hàm Lambda.\nTìm kiếm Lambda.\nNhấp Create a function.\nFunction name : lambda-performance-test. Run time : Node.js 22.x.\nNhấp Create function.\nTạo thành công.\nNhập code như hình.\n"
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/4-s3log/",
+	"title": "Cấu hình API Gateway",
+	"tags": [],
+	"description": "",
+	"content": "Cấu hình API Gateway.\nTạo REST API connect Lambda. Tạo HTTP API Gateway để gọi Lambda qua URL. Liên kết API Gateway với hàm lambda-performance-test Triển khai giai đoạn prod. Triển khai API và lấy URL Invoke Lấy URL điểm cuối:https://661l0vt812.execute-api.ap-southeast-1.amazonaws.com/default/lambda-performance-test. Kiểm tra curl để xác nhận Lambda hoạt động: Mở cmd và sao chép URL điểm cuối này vào:curl “https://661l0vt812.execute-api.ap-southeast-1.amazonaws.com/default/lambda-performance-test”. Kết quả: "
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/5-portfwd/",
+	"title": "Cấu hình giám sát CloudWatch",
+	"tags": [],
+	"description": "",
+	"content": "Mở cmd Chạy lệnh configure\nSau khi chạy configure chúng ta chạy. aws application-autoscaling register-scalable-target \u0026ndash;service-namespace lambda \u0026ndash;resource-id function:lambda-performance-test:prod \u0026ndash;scalable-dimension lambda:function:ProvisionedConcurrency \u0026ndash;min-capacity 1 \u0026ndash;max-capacity 5.\nVậy là bạn vừa đăng ký Mục tiêu có thể mở rộng cho tính năng đồng thời được cung cấp Bật tính năng đồng thời được cung cấp.\nKết quả test:\nCấu hình như trong hình.\nTương tự 512 và 1024 thì thay vào Memory là được Chạy thử 5 lần cho kết quả như sau :\nNhận xét:. Lambda function của bạn rất nhẹ (hầu như chỉ trả về JSON). Tăng Memory từ 128 → 512 → 1024 không tạo khác biệt đáng kể về thời gian chạy. 128MB là tối ưu về chi phí, vì: Memory nhỏ nhất = giá rẻ nhất. Thời gian chạy gần như bằng nhau.\nTạo bảng điều khiển giám sát.\nBảng điều khiển giám sát\nĐã tạo thành công Chính sách mở rộng để tự động điều chỉnh Đồng thời được cung cấp\n"
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/6-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": " Xóa hàm Lambda và bí danh. • Vào AWS Lambda =\u0026gt; Hàm =\u0026gt; Chọn hàm lambda-performance-test. • Xóa bí danh prod trước, sau đó xóa hàm. Xóa API Gateway. Chạy lệnh này trong cmd: aws apigateway get -rest-api. Chúc mọi người thực hành thật thành công.\n"
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://lenhutam.github.io/Internship-workshop-LeNhuTam/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
